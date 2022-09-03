@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello
+{% endblock %}
+
+{% block body %}
+
+	<div>
+		<style>
+			.accueil {
+				background-image: url('https://leisureneed.com/wp-content/uploads/2020/08/famous-shopping-malls-in-singapore-scaled.jpg');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 80%;
+				height: 500px;
+				text-align: center;
+
+			}
+			.card {
+				text-align: center;
+			}
+		</style>
+
+		<div class="accueil ">
+			<h2>BIENVENUE</h2>
+			<h6 class="mb-5 red">BIENVENUE CHEZ MY SHOP
+			</h6>
+
+		</div>
+	</div>
+<br><br>
+	
+	{# {% for Produit in Produits %}
+	    
+	
+	<div class="card mb-3" style="max-width: 540px;">
+	  <div class="row g-0">
+	    <div class="col-md-4">
+	      <img src="{{ Produit.photo }}" class="img-fluid rounded-start" alt="...">
+	    </div>
+	    <div class="col-md-8">
+	      <div class="card-body">
+	        <h5 class="card-title">{{ Produit.titre }} </h5>
+	        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac lorem hendrerit, tempus turpis vitae, aliquam massa. Fusce euismod ipsum ut dui gravida,</p>
+	        <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+	      </div>
+	    </div>
+	  </div>
+	</div> #}
+
+
+	{# 
+	{% endfor %} #}
+
+{% endblock %}

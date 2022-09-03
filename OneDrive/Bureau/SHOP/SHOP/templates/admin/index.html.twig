@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Admin!{% endblock %}
+
+{% block body %}
+<h1 class="display-4 text-center my-4">BACKOFFICE</h1>
+
+<p class="text-center">bienvenue sur votre backoffice</p>
+
+
+<a href="{{ path('admin_produits') }}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES PRODUITS</a>
+{# <a href="{{ path('admin_users') }}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES UTILISATEURS</a> #}
+
+
+{% endblock %}

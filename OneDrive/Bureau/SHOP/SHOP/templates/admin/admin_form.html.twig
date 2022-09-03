@@ -1,0 +1,90 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>
+{% if editMode %}
+    Modification d'un produit
+{% else %}
+    Ajout un produit
+{% endif %}
+</h1>
+
+
+{{ form_start(formProduit, {
+    attr:{
+        novalidate: 'novalidate'
+    }
+}) }}
+
+{{ form_row(formProduit.titre, {
+    label: "Titre",
+    attr: {
+        placeholder: "Marque de t-shirt"
+    }
+}) }}
+{{ form_row(formProduit.description,{
+    label: "description",
+    attr: {
+        placeholder: "description"
+    }
+})  }}
+
+{{ form_row(formProduit.couleur,{
+    label: "couleur",
+    attr: {
+        placeholder: "couleur"
+    }
+}) }}
+
+
+{{ form_row(formProduit.taille,{
+    label: "taille",
+    attr: {
+        placeholder: "taille"
+    }
+}) }}
+
+{{ form_row(formProduit.collection,{
+    label: "collection",
+    attr: {
+        placeholder: "collection"
+    }
+}) }}
+
+{{ form_row(formProduit.photo,{
+    label: "photo",
+    attr: {
+        placeholder: "photo"
+    }
+}) }}
+
+{{ form_row(formProduit.prix,{
+    label: "prix",
+    attr: {
+        placeholder: "prix"
+    }
+})  }}
+
+{{ form_row(formProduit.stock,{
+    label: "stock",
+    attr: {
+        placeholder: "stock"
+    }
+})  }}
+
+{{ form_row(formProduit.date_enregistrement) }}
+
+
+
+
+{% if editMode %}
+<button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+{% else %}
+<button type="submit" class="btn btn-primary mt-2">Ajouter</button>
+{% endif %}
+
+
+{{ form_end(formProduit) }}
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Votre panier</h1><br><br>
+
+{% if items %}
+{# si j'ai des produits dans mon panier, j'affiche son contenu #}
+  <table class="table">
+  <thead>
+  <tr>
+
+  <th>Produit</th>
+  <th>Quantité</th>
+  <th>Prix</th>
+  <th>Total</th>
+  <th>Actions</th>
+
+  </tr>
+  </thead> 
+  <tbody>
+  {% for item in items %}
+
+  <tr>
+
+  <td>{{ item.produit.titre }}</td>
+  <td>{{ item.produit.prix|number_format(2) }}€</td>
+  <td>
+  <a href="{{ path('cart_decrement',{id: item.produit.id}) }}" class="btn-sm btn-primary">
+   <i class="fas fa-minus"></i>
+   </a>
+      {{ item.quantity }}
+      <a href="{{ path('cart_add',{id:item.produit.id}) }}" class="btn-sm btn-primary">
+      <i class="fas fa-plus"></i>
+      </a>
+      </td>
+  <td>{{ (item.produit.prix * item.quantity)|number_format(2) }}€</td>
+  <td>
+      <a href="{{ path('cart_remove', {id: item.produit.id}) }}" class="btn btn-danger">
+         <i class="fas fa-trash"></i>
+      </a>
+  </td>
+
+  </tr>
+
+    
+  {% endfor %}
+
+  </tbody>
+  <tfoot>
+  <tr>
+  <td colspan="3" class="text-end">Total : </td>
+  <td>{{ total|number_format(2) }}€</td>
+  <td>
+  <a href="{{ path('cart_empty') }}" class="btn-sm btn-danger">
+  <i class="fas fa-trash-alt"></i>
+  </a>
+  </td>
+  </tr>
+  </tfoot>
+  </table>
+
+
+ {% else %}
+
+    {# sinon, j'indique que le panier est vide #}
+
+    <p> votre panie est vide! </p>
+
+
+
+{% endif %}
+
+
+{% endblock %}
